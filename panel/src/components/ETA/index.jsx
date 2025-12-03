@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ETAList from "./ETAList";
-import ETAChart from "./ETAChart";
+import Map from "../Map/index";
 
 export default function ETA({ itens }) {
   
@@ -66,7 +66,7 @@ export default function ETA({ itens }) {
             minHeight: 400, 
           }}
         >
-          <ETAChart data={filtrados} />
+          <Map busca={busca}/>
         </div>
 
         {/* Lista */}
