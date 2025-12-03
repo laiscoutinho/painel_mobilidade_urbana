@@ -38,7 +38,8 @@ export default function Map({ busca }) {
           icon: L.icon({
             iconUrl,
             iconSize: [23, 23],
-            iconAnchor: [35, 35],
+            iconAnchor: [11, 23],
+            popupAnchor: [0, -23]
           }),
         };
       });
@@ -70,8 +71,6 @@ export default function Map({ busca }) {
               icon={v.icon}
             >
               <Popup>
-                <strong>{v.prefixo}</strong><br />
-                Id: {v.id}<br />
                 Linha: {v.linha}<br />
                 Status: {v.status}<br />
                 Velocidade: {v.velocidade} km/h
