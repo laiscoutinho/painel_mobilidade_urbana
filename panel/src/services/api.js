@@ -9,6 +9,8 @@ export const api = axios.create({
 });
 
 // endpoints
+
+export const getVeiculos = (busca) => api.get(busca ? `/veiculos?linha_like=${busca}` : "/veiculos");
 export const getETA = async () => {
   const response = await api.get("/previsaoChegada");
   
@@ -18,7 +20,6 @@ export const getETA = async () => {
   };
 };
 
-export const getVeiculos = (busca) => api.get(busca ? `/veiculos?linha_like=${busca}` : "/veiculos");
 export const getTransito = () => api.get("/transito");
 export const getLinhas = () => api.get("/linhas");
 export const getParadas = () => api.get("/paradas");
