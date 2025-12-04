@@ -2,12 +2,7 @@
 
 ## 🚌 Visão Geral
 
-Este repositório reúne duas partes integradas:
-
-* **/api** → Mock API utilizando JSON Server ([acesse aqui](https://github.com/niusdev/mock_API_mobi_urbana));
-* **/panel** → Aplicação cliente, responsável por consumir os dados da API e exibir um painel de mobilidade urbana;
-
-O objetivo central é demonstrar consumo de dados em JSON.
+Este repositório é a aplicação cliente, responsável por consumir os dados da API ([acesse aqui](https://github.com/niusdev/mock_API_mobi_urbana)) e exibir um painel de mobilidade urbana. O objetivo central é demonstrar consumo de dados em JSON.
 
 ---
 
@@ -15,76 +10,21 @@ O objetivo central é demonstrar consumo de dados em JSON.
 
 ```
 /
-├── api/         → Mock API
-│   ├── db.json
-│   └── package.json
-│
 └── panel/       → Painel Cliente
     ├── src/
     │   ├── components/
     │   │   ├── Map/           → veículos no mapa
-    │   │   ├── ETAList/       → previsão de chegada (ETA)
+    │   │   ├── ETA/           → previsão de chegada (ETA)
+    │   │   │   └── ETAList/   → item para cada linha/parada/tempo
     │   │   ├── Anomalias/     → validação e inconsistências
-    │   │   └── Header/        → menu/topo
+    │   │   └── assets/        → menu/topo
+    │   │       └── images/    → imagens utilizadas
     │   ├── services/          → integração com API
     │   ├── utils/             → funções de validação e cálculo
     │   ├── pages/             → Dashboard principal
     │   └── main.jsx
-    ├── public/
     └── package.json
 ```
-
----
-
-# 🚀 **Como executar a API (pasta /api)**
-
-```bash
-cd api
-npm install
-npm run server
-```
-
-A API ficará disponível em:
-
-👉 **[http://localhost:3000](http://localhost:3000)**
-
-### Endpoints disponíveis
-
-#### **Linhas de Ônibus**
-* `GET /linhas`
-* `GET /linhas/:id`
-
-#### **Paradas**
-* `GET /paradas`
-* `GET /paradas/:id`
-
-#### **Horários de Ônibus**
-* `GET /horariosOnibus`
-* `GET /horariosOnibus/:id`
-
-#### **Veículos**
-* `GET /veiculos`
-* `GET /veiculos/:id`
-
-#### **Rotas de Ônibus**
-* `GET /rotasOnibus`
-* `GET /rotasOnibus/:id`
-
-#### **Trânsito**
-* `GET /transito`
-* `GET /transito/:id`
-
-#### **Eventos de Trânsito**
-* `GET /eventosTransito`
-* `GET /eventosTransito/:id`
-
-#### **Previsão de Chegada (ETA)**
-* `GET /previsaoChegada`
-* `GET /previsaoChegada/:id`
-
-#### **Regiões**
-* `GET /regioes`
-* `GET /regioes/:id`
 
 ---
 
@@ -112,7 +52,6 @@ Consome `/previsaoChegada` e apresenta:
 * linha
 * parada
 * horário previsto
-* tempo restante
 
 ### ✔ **2. Veículos no Mapa**
 
@@ -132,7 +71,6 @@ Validação automática dos dados recebidos:
 * Coordenadas inválidas
 * Velocidade incoerente (negativa, muito alta etc.)
 * ETA no passado
-* Campos ausentes
 * Dados inconsistentes
 
 ---
