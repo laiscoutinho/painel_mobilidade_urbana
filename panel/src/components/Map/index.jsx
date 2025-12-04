@@ -71,6 +71,11 @@ export default function Map({ busca }) {
               icon={v.icon}
             >
               <Popup>
+<<<<<<< HEAD
+=======
+                <strong>{v.prefixo}</strong><br />
+                Id: {v.id}<br />
+>>>>>>> 1e51ae2 (merge with main)
                 Linha: {v.linha}<br />
                 Status: {v.status}<br />
                 Velocidade: {v.velocidade} km/h
