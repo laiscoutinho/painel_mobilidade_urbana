@@ -82,11 +82,7 @@ export function detectarAnomalias(veiculos, etas, serverTime) {
   });
 
   etas.forEach((e) => {
-<<<<<<< HEAD
-    const resultado = validarETA(e);
-=======
     const resultado = validarETA(e, serverTime);
->>>>>>> ed8b210 (feat: adds validation functions and improve existing ones)
 
     if (resultado.anomalia) {
       erros.push({
